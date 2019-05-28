@@ -18,7 +18,7 @@ public class Book {
     @JoinTable(name = "publishers_books", joinColumns = @JoinColumn(name = "publisher_id"), inverseJoinColumns = @JoinColumn(name = "book_id"))
     Publisher publisher;
 
-    @ManyToMany
+    @ManyToMany(fetch=FetchType.EAGER)
     @JoinTable(name = "authors_books", joinColumns = @JoinColumn( name = "book_id"), inverseJoinColumns = @JoinColumn(name = "author_id"))
     Set<Author> authors = new HashSet<>();
 
@@ -102,4 +102,5 @@ public class Book {
                 ", authors=" + authors +
                 '}';
     }
+    
 }

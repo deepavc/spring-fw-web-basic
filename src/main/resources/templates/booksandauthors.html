@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="th:https://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Books & Authors</title>
+</head>
+<body>
+
+ <h2>Welcome to Books & Authors !</h2>
+
+ <table>
+ 	
+ 	<tr>
+ 		<th> Book Name </th>
+ 		<th> ISBN </th>
+ 		<th> Publisher Name </th>
+ 		<th> Publisher Address </th>
+ 		<th> Author(s) </th> 		
+ 	</tr>
+ 	<tr th:each="booksAndAuthor : ${booksAndAuthors}">
+        <td th:text="${booksAndAuthor.name}">Book Name</td>
+        <td th:text="${booksAndAuthor.isbn}">ISBN Code</td>
+        <td th:text="${booksAndAuthor.publisherName}">Publisher Name</td>
+        <td th:text="${booksAndAuthor.publisherAddress}">Publisher Address</td>
+        <!-- <td th:text="${booksAndAuthor.author}">Author</td> -->
+        <td th:each="authorName : ${booksAndAuthor.author}">
+        	<span th:text="${authorName}"> Author Name(s) </span> <br>
+        </td>
+     </tr>
+ </table>
+</body>
+</html>
