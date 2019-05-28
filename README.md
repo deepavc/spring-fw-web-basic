@@ -8,3 +8,5 @@ Uses Hibernate for db integration
 h2-db
 
 /h2-console
+
+http://localhost:8080/books
